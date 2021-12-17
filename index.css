@@ -1,0 +1,132 @@
+html,
+body {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: darkturquoise;
+  font-family: sans-serif;
+}
+
+form {
+  width: min(40ch, 90%);
+  padding-bottom: 2rem;
+}
+
+body,
+form,
+details.options {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+form {
+  gap: 0.5rem;
+}
+
+summary {
+  cursor: pointer;
+}
+
+details>summary>span.hint::before {
+  content: "show ";
+}
+
+details[open]>summary>span.hint::before {
+  content: "hide ";
+}
+
+input[name=output] {
+  display: block;
+}
+
+
+input,
+textarea,
+body {
+  font-size: 1.5rem;
+}
+
+form>input[name=output],
+form>textarea,
+form>details {
+  width: 100%;
+}
+
+input[type=text]:not(:disabled),
+textarea {
+  font-size: min(1.5rem, 3.5vw);
+  font-family: ui-monospace, monospace;
+}
+
+input[type=number] {
+  width: 4ch;
+}
+
+input[type=text],
+textarea,
+input[type=number] {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+}
+
+fieldset,
+textarea {
+  border: 0;
+}
+
+textarea {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+fieldset[name=sauce] {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 7ch 2rem 4rem auto;
+  align-items: center;
+  text-align: left;
+  border: 0.1rem solid;
+}
+
+fieldset[name=sauce]>label {
+  grid-column: 1;
+}
+
+fieldset[name=sauce]>input[type=radio] {
+  grid-column: 2;
+}
+
+fieldset[name=sauce]>input[type=text] {
+  grid-column: 3;
+}
+
+fieldset[name=sauce]>details {
+  grid-column: 1 / -1;
+}
+
+fieldset[name=sauce]>details {
+  margin-top: 0.5em;
+}
+
+details[open] summary {
+  margin-bottom: 0.5em;
+}
+
+@media(prefers-color-scheme: dark) {
+
+  input[type=text],
+  textarea,
+  input[type=number] {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  textarea {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  body {
+    background-color: teal;
+  }
+}

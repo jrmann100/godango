@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#111">
+  <meta name="color-scheme" content="dark light">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+  <form>
+    <h1>
+      godango
+    </h1>
+    <details class="options" open>
+      <summary><span class="hint"></span>options</summary>
+      <fieldset>
+        <label style="display: inline-block;"><input name="count" type="number" min="1" size="3"> word(s)</label>,
+        <label style="display: inline-block;">separator <input name="separator" type="text" size="1"></label>
+        <fieldset name="sauce">
+          <legend>
+            suffix
+          </legend>
+          <label for="#sauce-random">random</label><input id="sauce-random" type="radio" name="sauce-type"
+            value="random">
+          <label for="#sauce-custom">custom</label><input id="sauce-custom" type="radio" name="sauce-type"
+            value="custom"><input type="text" size="2" name="sauce-value">
+          <label for="#sauce-none">none</label><input id="sauce-none" type="radio" name="sauce-type" value="none">
+          <details>
+            <summary>why add a suffix?</summary>
+            A suffix helps your passphrases to conform to special conditions, such as including capital letters and
+            numbers.<br><br>So long as you have enough words, it's probably safe to re-use a custom suffix.
+          </details>
+        </fieldset>
+      </fieldset>
+    </details>
+    <p><span style="display: inline-block;">entropy ≈ <input type="text" size="3" name="entropy" disabled> bits,</span>
+      <span style="display: inline-block;">length <input type="text" size="3" name="length" disabled> chars</span></p>
+    <input name="output" size="40" readonly type="text">
+    <fieldset>
+      <input name="copy" type="button" value="copy">
+      <input name="new" type="submit" value="new">
+    </fieldset>
+    <textarea style="resize: none; line-height: 200%;" cols="40" rows="10" readonly></textarea>
+    <small>This is a passphrase generator based on <a href="https://www.eff.org/dice">EFF Dice-Generated
+        Passphrases</a>, with added options including custom suffixes. It uses <a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues">Web Crypto</a> to randomize
+      passwords.<br><br>Everything runs in your browser.<br>Check out the source on <a
+        href="https://github.com/jrmann100/godango">GitHub.</a></small>
+  </form>
+  <script src="index.js"></script>
+</body>
+
+</html>
