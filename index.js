@@ -47,7 +47,7 @@ function entropy() {
 
 async function main() {
   // https://www.eff.org/dice
-  const text = await (await fetch("https://jordan.services.4506266.xyz/hosting/eff_large_wordlist.txt", {
+  const text = await (await fetch("eff_large_wordlist.txt", {
     cache: "force-cache"
   })).text();
 
